@@ -44,3 +44,57 @@ args = parser.parse_args()
 answer = args.drink
 
 check = Check()
+
+
+if args.alc_type:
+    print("Now you can see by yourself if a particular alcohol type " +
+          "is present in our database!")
+    print(db["Alcohol_type"])
+elif args.drinks:
+    print("Now you can see by yourself if the cocktail " +
+          "is present in our database!")
+    print(db["Drink"])
+
+if args.similarities:
+    response2 = input("Do you want to see the similarities according " +
+                      "to cocktail category or Alcohol type " +
+                      "of cocktails? (cat or alt) -> ")
+    if response2 == "alt":
+        similarities("Alcohol_type", db.loc[db['Drink'] == answer, 'Alcohol_type'].iloc[0])
+    elif response2 == "cat":
+        similarities("Category", db.loc[db['Drink'] == answer, 'Category'].iloc[0])
+
+
+elif args.characteristics:
+    return_chr(answer)
+
+elif args.database:
+    print("Now you can see by yourself which cocktails " +
+          "you can do with your availale ingridients")
+    print(db["Drink"] + " : " + db["Ingridients"])
+else:
+    if args.add:
+        add_element(answer)
+    elif check.check_artist(answer):
+        print("In order to do " + db["Drink"].loc[db["Drink"].str.lower() == answer.lower()]
+              .values[0] + " you need: "+
+              db["Ingridients"].loc[db["Drink"].str.lower() ==
+              answer.lower()].values[0] + "\nInstruction: " +
+              db["Instruction"].loc[db["Drink"].str.lower() ==
+              answer.lower()].values[0])
+    else:
+        response = input(answer + " is not present in our database. Are you " +
+                         "sure that you wrote it correctly " +
+                         "(use -d to check if it is " +
+                         "already in our database)?(y or n) -> ")
+        if response == "y":
+            response1 = input(
+                "Great! Do you want to add it? (y or n) -> ")
+            if response1 == "y":
+                add_element(answer)
+            else:
+                print("Thank you anyway")
+        else:
+            print("Use -d to check if it is already in our database, " +
+                  "maybe there is a spelling error in the input. " +
+                  "Then try again, thank you for your patiance!")
