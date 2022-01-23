@@ -11,6 +11,7 @@ inside the database and/or add it.
 There is also the possibility to check out
 the association between cocktails and alchol type.
 """
+
 from inserter import add_element
 from checking import Check
 from similarities import similarities
@@ -45,7 +46,6 @@ answer = args.drink
 
 check = Check()
 
-
 if args.alc_type:
     print("Now you can see by yourself if a particular alcohol type " +
           "is present in our database!")
@@ -75,7 +75,7 @@ elif args.database:
 else:
     if args.add:
         add_element(answer)
-    elif check.check_artist(answer):
+    elif check.check_drink(answer):
         print("In order to do " + db["Drink"].loc[db["Drink"].str.lower() == answer.lower()]
               .values[0] + " you need: "+
               db["Ingridients"].loc[db["Drink"].str.lower() ==

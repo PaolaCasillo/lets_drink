@@ -13,7 +13,11 @@ import pandas as pd
 class Check:
 
     def check_artist(self, artist):
-        
+        """
+        This function controls if the input given
+        by the user (cocktail name) is present
+        in the Drink column inside the csv file.
+        """
         artist = artist.lower()
         db = pd.DataFrame(pd.read_csv('cocktails_data.csv'))
         artists = db["Drink"].str.lower()
