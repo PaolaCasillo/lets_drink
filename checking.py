@@ -12,15 +12,16 @@ import pandas as pd
 
 class Check:
 
-    def check_artist(self, artist):
+    def check_drink(self, drink):
         """
         This function controls if the input given
         by the user (cocktail name) is present
         in the Drink column inside the csv file.
         """
-        artist = artist.lower()
+        drink = drink.lower()
         db = pd.DataFrame(pd.read_csv('cocktails_data.csv'))
-        artists = db["Drink"].str.lower()
-        if artist in artists.values:
+        drink = db["Drink"].str.lower()
+        if drink in drink.values:
             return True
         return False
+
