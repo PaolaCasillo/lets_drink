@@ -1,7 +1,7 @@
 """
 This is the main file where we created
-the interaction between the user and the
-database of drinks.
+the interaction between the user and
+the database of drinks.
 We used the argparse module to configure
 all the positional and optional arguments.
 Depending on the arguments given,
