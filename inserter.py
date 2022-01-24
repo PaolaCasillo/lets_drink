@@ -12,8 +12,16 @@ of our database.
 
 def add_element(drink, response=""):
 
+    """
+    This function comes into play once the user inputs a value
+    that is not inside the database, or when, after
+    the input, the user writes the optional argument -a.
+    It uses the neme of the new drink precedently imputed,
+    then it asks for the remaining values to insert in all the 8 columns
+    of the database.
+    """
             
- db = pd.DataFrame(pd.read_csv('cocktails_data.csv'))
+    db = pd.DataFrame(pd.read_csv('cocktails_data.csv'))
 
     ingridients = input(
         "Now enter the ingridients of the drink->")
