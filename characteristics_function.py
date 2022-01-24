@@ -15,3 +15,25 @@ import pandas as pd
 
 
 
+def return_chr(drink):
+
+    db = pd.DataFrame(pd.read_csv('cocktails_data.csv'))
+    drinks = list(db["Drink"])
+
+    if drink in drinks:
+        print("to do the ",db["Drink"].loc[
+            db["Drink"].str.lower() == drink.lower()].values[0]," that is a ",
+            db["Category"].loc[db["Drink"].str.lower() == drink.lower()].values[0],
+            ", you need ", db["Ingridients"].loc[db["Drink"].str.lower() == drink.lower()].values[0],
+            " and", db["Instruction"].loc[db["Drink"].str.lower() == drink.lower()].values[0],
+            " . Finally serve in "  ,db["Glass"].loc[db["Drink"].str.lower() == drink.lower()].values[0])
+    else:
+         print(drink, " seems not to be present in our database." +
+               "Are you sure that you wrote" +
+               " the name of the cocktail correctly?" +
+               " Use -d to check if it is already in our database," +
+               "maybe there is a spelling error in the input." +
+               " Check it and then try again, if it is not present," +
+               "use -a to insert the new drink," +
+               " thank you for your patience!")
+
