@@ -14,11 +14,7 @@ import csv
 import pandas as pd
 
 
-
 def return_chr(drink):
-
-    db = pd.DataFrame(pd.read_csv('cocktails_data.csv'))
-    drinks = list(db["Drink"])
     """
     This function comes into play once the user inputs a value
     and wants to obtain as output the complete list of information that
@@ -26,6 +22,9 @@ def return_chr(drink):
     the input, the user writes the optional argument -chr.
     It recognizes the input if it is a name of a drink inside the dataset.
     """
+    db = pd.DataFrame(pd.read_csv('cocktails_data.csv'))
+    drinks = list(db["Drink"])
+
     if drink in drinks:
         print("to do the ",db["Drink"].loc[
             db["Drink"].str.lower() == drink.lower()].values[0]," that is a ",

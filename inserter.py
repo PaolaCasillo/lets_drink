@@ -8,7 +8,12 @@ Finally the list is inserted in a new
 row becoming part
 of our database.
 """
-            
+
+import csv
+import pandas as pd
+from checking import Check
+from csv import writer
+
 
 def add_element(drink, response=""):
 
@@ -20,7 +25,6 @@ def add_element(drink, response=""):
     then it asks for the remaining values to insert in all the 8 columns
     of the database.
     """
-            
     db = pd.DataFrame(pd.read_csv('cocktails_data.csv'))
 
     ingridients = input(
@@ -54,6 +58,7 @@ def add_element(drink, response=""):
         category = input(
             "You can't enter nothing..." + "please put anything ->")
 
+
     with open(r'cocktails_data.csv', 'a') as write_obj:
         writer = csv.writer(write_obj)
         row = len(db)
@@ -66,3 +71,6 @@ def add_element(drink, response=""):
 
             
 
+
+
+            
