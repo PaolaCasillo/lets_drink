@@ -13,7 +13,7 @@ the association between cocktails and alchol type.
 """
 
 from inserter import add_element
-from checking import Check
+from checking import   Check
 from similarities import similarities
 from characteristics_function import return_chr
 import argparse
