@@ -46,3 +46,15 @@ def add_element(drink, response=""):
         category = input(
             "You can't enter nothing..." + "please put anything ->")
 
+    with open(r'cocktails_data.csv', 'a') as write_obj:
+        writer = csv.writer(write_obj)
+        row = len(db)
+        write_obj.write("\n")
+        writer.writerow([row, drink, glass, instruction, Basic_taste,
+                                 category, ingridients, Alcohol_type])
+        write_obj.close()
+        return print("Thank you for your contribution!")
+
+
+            
+
