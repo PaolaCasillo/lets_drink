@@ -20,8 +20,8 @@ class Check:
         """
         drink = drink.lower()
         db = pd.DataFrame(pd.read_csv('cocktails_data.csv'))
-        drink = db["Drink"].str.lower()
-        if drink in drink.values:
+        drinks = db["Drink"].str.lower()
+        if drink in drinks.values:
             return True
         return False
 
