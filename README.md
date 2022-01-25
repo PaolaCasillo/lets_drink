@@ -87,14 +87,72 @@ Instruction:  Mix one third of Prosecco, one third of Aperol and one third of Sp
 Instead, for more complicated queries, we can recall some optional arguments. 
 
 Here follow some examples:
+
+### •	Add a new cocktail (-a)
+
+```bash
+python main.py "my Drink" -a
+```
+This argument allows to insert a new drink to the database. The `-a` activates the 
+`add_element` function which first checks if the drink already exists in our database 
+and then generate a sequence of questions to insert all the necessary data, such as the ones below:
+```bash
+Now enter the ingridients of the drink->1
+Now enter the intruction to do it -> 2
+Now enter the Alcohol_type -> 3
+Now enter the type of glass to use to serve it->4
+Now enter the basic taste of the drink->5
+Now enter the category of the drink->6
+Thank you for your contribution!
+```
+
+### •	Find manually if the drink is present in the database (-d)
+
+```bash
+python main.py "Spritz" -d
+```
+fter being called, the argument `-d` allows to get the database relation 
+between all drink and ingridients as follows:
+
+```bash
+Now you can see by yourself which cocktails you can do with your availale ingridients
+After sex : Orange Juice and vodka
+1                Bloody Mary  : Vodka and tomato juice 
+2        Spritz : Aperol, Prosecco and Sparkling Water 
+3                      Gin Tonic : Gin and tonic water 
+4     Cosmopolitan : Vodka, Triple Sec, Lemon Juice,...
+5              Cuba Libre : White Rum, Lime Juice, Cola
+6     Long Island : Gin, Tequila, Vodka, White Rum, ...
+7     Sex on the beach : Vodka, Peach schnapps, Oran...
+8     Negroni : Campari, Gin, sweet vermouth, organz...
+9     Americano : Campari, Sweet Vermouth, Soda wate...
+10        Moscow Mule : Vodka, lime juice, ginger beer 
+11    Margarita : Cazadores Tequila, triple sec liqu...
+```
+
+
+It's possible to see them separated with the following commands:
+
+- `python main.py "Drinks" -drk` which allows to see the entire list of cocktails
+- `python main.py "gin" -p`, to have access to the entire list of alcholics
+
+that's an example of -drk output:
+```bash
+0            After sex
+1         Bloody Mary 
+2               Spritz
+3            Gin Tonic
+4         Cosmopolitan
+5           Cuba Libre
+6          Long Island
+7     Sex on the beach
+8              Negroni
+9            Americano
+10         Moscow Mule
+11           Margarita
+12             Mojito 
+```
  
- 
- 
- 
- 
- 
- 
- 
- 
+### •	Print all characteristics of the given drink (-chr)
  
  
