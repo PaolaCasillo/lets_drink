@@ -194,7 +194,7 @@ In our Dataset we have the following Cocktail :
 
 # Contributing:
 
-If you would like to contribute to the Artdatabase by adding more information, please feel free to submit pull requests.
+If you would like to contribute to the Lets_drink project by adding more information, please feel free to submit pull requests.
 Please contact us if you wish to implement significant changes and test them before pulling.
 
 # License :lock:
