@@ -43,6 +43,50 @@ To do this, the user can type:
 `git clone https://github.com/PaolaCasillo/lets_drink.git
 
 This will automatically download all the files the user needs to run the program.
+
+# Functionalities
+
+In order to develop a suitable structure for our project according to the intended goals,
+we created 4 main functions and stored them into different modules:
+
+-  `add_element` function;
+-  `check_drink function;
+-  `return_chr` function;
+-  `similarities` function.
+
+All these functions are called by argparse from the `main.py` module by the corresponding
+optional arguments.
+
+This means that if the user wants to get some insights from our functions, he/she
+doesn't need to point to the specific module that contains the function, but in general 
+it's enough to type:
+
+```bash
+python main.py "name of the drink" -optional argument
+```
+
+The name of the drink is indeed a positional argument that should always 
+be included. 
+
+No optional argument is required if the user only wants to know if the cocktail
+is present in our database..
+
+For example, if we want to know if the classic "Spritz" is present, we only neeed to write:
+
+```bash
+python main.py "Spritz"
+```
+
+And the output will be:
+
+```bash
+In order to do  Spritz  you need:  Aperol, Prosecco and Sparkling Water  
+Instruction:  Mix one third of Prosecco, one third of Aperol and one third of Sparkling Water, add ice.
+```
+
+Instead, for more complicated queries, we can recall some optional arguments. 
+
+Here follow some examples:
  
  
  
