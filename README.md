@@ -33,6 +33,16 @@ The original database contained tons of raws with repetitions and useful and ver
 All the information is needed by the software to work properly and to perform the functions
 we created.
  
+# How to start
+
+The first thing to do in order to develop the main functionalities just described
+is to clone the remote directory. 
+
+To do this, the user can type:
+
+`git clone https://github.com/PaolaCasillo/lets_drink.git
+
+This will automatically download all the files the user needs to run the program.
  
  
  
