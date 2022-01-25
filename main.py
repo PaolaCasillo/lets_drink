@@ -70,8 +70,9 @@ elif args.characteristics:
 
 elif args.database:
     print("Now you can see by yourself which cocktails " +
-          "you can do with your availale ingridients")
+          "you can do with your availale ingridients ")
     print(db["Drink"] + " : " + db["Ingridients"])
+
 else:
     if args.add:
         add_element(answer)
@@ -82,6 +83,7 @@ else:
               answer.lower()].values[0] + "\nInstruction: " +
               db["Instruction"].loc[db["Drink"].str.lower() ==
               answer.lower()].values[0])
+
     else:
         response = input(answer + " is not present in our database. Are you " +
                          "sure that you wrote it correctly " +
