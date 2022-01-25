@@ -75,7 +75,7 @@ elif args.database:
 else:
     if args.add:
         add_element(answer)
-    elif check.check_drink(answer):
+    elif check.check_artist(answer):
         print("In order to do " + db["Drink"].loc[db["Drink"].str.lower() == answer.lower()]
               .values[0] + " you need: "+
               db["Ingridients"].loc[db["Drink"].str.lower() ==
