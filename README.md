@@ -155,4 +155,56 @@ that's an example of -drk output:
  
 ### •	Print all characteristics of the given drink (-chr)
  
+The function first checks if the input we inserted is present in the database;
+if not the system will warn and invite you to check if you wrote it correctly. 
+
+To use the function the user should recall the optional argument -chr:
+```bash
+python main.py "Spritz" -chr
+```
+
+Thus, the output will be:
+```bash
+to do the  Spritz  that is a  Cocktail , you need  Aperol, Prosecco and Sparkling Water   and Mix one third of Prosecco, one third of Aperol and one third of Sparkling Water, add ice.  . Finally serve in  Cocktail glass
+```
+
+### •	find similar cocktails (-s)
+
+he similarities function allows the user to make some find cocktails of the same category (cat) or with the same alchool types (alt)
+
+In order to use it the user should recall the optional argument `-s` in the following way
+
+```bash
+python main.py "Spritz" -s
+```
+output:
+```bash
+Do you want to see the similarities according to cocktail category or Alcohol type of cocktails? (cat or alt) -> cat
+```
+```bash
+In our Dataset we have the following Cocktail : 
+            Drink
+1   Bloody Mary 
+2         Spritz
+4   Cosmopolitan
+6    Long Island
+12       Mojito 
+14    Manhattan 
+```
+
+# Contributing:
+
+If you would like to contribute to the Artdatabase by adding more information, please feel free to submit pull requests.
+Please contact us if you wish to implement significant changes and test them before pulling.
+
+# License :lock:
+
+GNU License
+
+# Authors 
+
+Paola Casillo
+Irene Bertolini
+Tommaso Antonello
+
  
